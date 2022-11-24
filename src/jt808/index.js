@@ -30,6 +30,7 @@ module.exports = class JT808 extends CDP {
       messageId: h.messageId,
       messageBodyLength: h.messageBodyLength,
       dataEncyption: h.dataEncyption,
+      wheatherToSubContract: h.wheatherToSubContract,
     };
   }
 };

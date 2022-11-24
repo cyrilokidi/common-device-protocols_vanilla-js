@@ -10,3 +10,5 @@ module.exports.MESSAGE_BODY_ATTRIBUTES = [
 module.exports.MESSAGE_BODY_LENGTH = [6, 16];
 
 module.exports.DATA_ENCRYPTION = [3, 6];
+
+module.exports.WHETHER_TO_SUBCONTRACT = [2, 3];

@@ -17,6 +17,14 @@ describe("JT808", () =>
           const result = jt808.header().dataEncyption;
           expect(result).to.equal("None", "Invalid data encryption.");
         });
+
+        it("Should return sub-package status", () => {
+          const result = jt808.header().wheatherToSubContract;
+          expect(result).to.equal(
+            "Not Long Message",
+            "Invalid sub-package status."
+          );
+        });
       });
     })
   ));

@@ -10,6 +10,7 @@ const {
   MESSAGE_BODY_ATTRIBUTES,
   MESSAGE_BODY_LENGTH,
   DATA_ENCRYPTION,
+  WHETHER_TO_SUBCONTRACT,
 } = require("./jt808.constant");
 
 module.exports = class JT808Header {
@@ -45,6 +46,12 @@ module.exports = class JT808Header {
     } else if (first) {
       result = "RSA";
     } else result = "Reserved";
+    return result;
+  }
+
+  get wheatherToSubContract() {
+    let result = this.messageBodyAttributes(WHETHER_TO_SUBCONTRACT);
+    result = result === "1" ? "Long Message" : "Not Long Message";
     return result;
   }
 
