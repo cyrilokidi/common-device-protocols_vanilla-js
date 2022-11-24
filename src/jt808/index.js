@@ -20,8 +20,7 @@ module.exports = class JT808 extends CDP {
   }
 
   property(name) {
-    const result = this.str.slice(...name);
-    return result;
+    return this.str.slice(...name);
   }
 
   header() {
