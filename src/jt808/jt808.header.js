@@ -9,6 +9,7 @@ const {
   MESSAGE_ID,
   MESSAGE_BODY_ATTRIBUTES,
   MESSAGE_BODY_LENGTH,
+  DATA_ENCRYPTION,
 } = require("./jt808.constant");
 
 module.exports = class JT808Header {
@@ -33,6 +34,17 @@ module.exports = class JT808Header {
   get messageBodyLength() {
     let result = this.messageBodyAttributes(MESSAGE_BODY_LENGTH);
     result = binToDec(result);
+    return result;
+  }
+
+  get dataEncyption() {
+    let result = this.messageBodyAttributes(DATA_ENCRYPTION);
+    const [third, second, first] = result;
+    if (first === "0" && second === "0" && third === "0") {
+      result = "None";
+    } else if (first) {
+      result = "RSA";
+    } else result = "Reserved";
     return result;
   }
 
