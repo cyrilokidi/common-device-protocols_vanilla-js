@@ -31,3 +31,5 @@ module.exports.hexToBin = (hex) =>
   parseInt(hex, 16).toString(2).padStart(8, "0");
 
 module.exports.binToDec = (bin) => parseInt(bin, 2);
+
+module.exports.arrToString = (arr) => arr.join("");

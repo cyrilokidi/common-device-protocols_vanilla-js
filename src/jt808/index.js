@@ -4,15 +4,15 @@ const { HEADER } = require("./jt808.constant");
 const JT808Header = require("./jt808.header");
 
 module.exports = class JT808 extends CDP {
-  str;
+  byte;
 
-  constructor(str) {
-    super(str);
-    this.str = this.deserialize(str);
+  constructor(byte) {
+    super(byte);
+    this.byte = this.deserialize(byte);
   }
 
-  deserialize(str) {
-    let result = toUpperCase(str);
+  deserialize(byte) {
+    let result = toUpperCase(byte);
     result = pairSplit(result);
     result = restoreEscape(result);
     result = pairSplit(result);
@@ -20,7 +20,7 @@ module.exports = class JT808 extends CDP {
   }
 
   property(name) {
-    return this.str.slice(...name);
+    return this.byte.slice(...name);
   }
 
   header() {
