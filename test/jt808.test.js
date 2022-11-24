@@ -3,10 +3,15 @@ const { expect } = require("chai");
 const data = require("./data").jt808;
 
 describe("JT808", () =>
-  data.map((d, i) => {
-    const jt808 = new JT808(d);
+  data.map((d, i) =>
+    describe(`Transmission [${i + 1}]`, () => {
+      const jt808 = new JT808(d);
 
-    describe("Header", () => {
-      console.log("header: ", jt808.header().messageId);
-    });
-  }));
+      describe("Header", () => {
+        it("Should return message body length", () => {
+          const result = jt808.header().messageBodyLength;
+          expect(result).to.equal(38, "Incorrect message body length.");
+        });
+      });
+    })
+  ));

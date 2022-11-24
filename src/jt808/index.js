@@ -28,6 +28,7 @@ module.exports = class JT808 extends CDP {
     const h = new JT808Header(prop);
     return {
       messageId: h.messageId,
+      messageBodyLength: h.messageBodyLength,
     };
   }
 };
