@@ -8,22 +8,26 @@ describe("JT808", () =>
       const jt808 = new JT808(d);
 
       describe("Header", () => {
-        it("Should return message body length", () => {
-          const result = jt808.header().messageBodyLength;
-          expect(result).to.equal(38, "Incorrect message body length.");
-        });
+        describe("Message body attributes", () => {
+          it("Should return message body length", () => {
+            const result =
+              jt808.header().messageBodyAttributes.messageBodyLength;
+            expect(result).to.equal(38, "Incorrect message body length.");
+          });
 
-        it("Should return data encryption", () => {
-          const result = jt808.header().dataEncyption;
-          expect(result).to.equal("None", "Invalid data encryption.");
-        });
+          it("Should return data encryption", () => {
+            const result = jt808.header().messageBodyAttributes.dataEncyption;
+            expect(result).to.equal("None", "Invalid data encryption.");
+          });
 
-        it("Should return sub-package status", () => {
-          const result = jt808.header().wheatherToSubContract;
-          expect(result).to.equal(
-            "Not Long Message",
-            "Invalid sub-package status."
-          );
+          it("Should return sub-package status", () => {
+            const result =
+              jt808.header().messageBodyAttributes.wheatherToSubContract;
+            expect(result).to.equal(
+              "Not Long Message",
+              "Invalid sub-package status."
+            );
+          });
         });
       });
     })
