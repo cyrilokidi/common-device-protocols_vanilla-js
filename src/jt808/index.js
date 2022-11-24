@@ -1,5 +1,7 @@
 const CDP = require("../cdp");
 const { toUpperCase, pairSplit, restoreEscape } = require("../cdp.lib");
+const { HEADER } = require("./jt808.constant");
+const JT808Header = require("./jt808.header");
 
 module.exports = class JT808 extends CDP {
   str;
@@ -20,5 +22,13 @@ module.exports = class JT808 extends CDP {
   property(name) {
     const result = this.str.slice(...name);
     return result;
+  }
+
+  header() {
+    const prop = this.property(HEADER);
+    const h = new JT808Header(prop);
+    return {
+      messageId: h.messageId,
+    };
   }
 };

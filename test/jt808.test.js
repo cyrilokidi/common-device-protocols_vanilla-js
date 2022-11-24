@@ -6,5 +6,7 @@ describe("JT808", () =>
   data.map((d, i) => {
     const jt808 = new JT808(d);
 
-    describe("Header", () => {});
+    describe("Header", () => {
+      console.log("header: ", jt808.header().messageId);
+    });
   }));
