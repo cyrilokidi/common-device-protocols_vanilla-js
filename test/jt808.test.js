@@ -34,6 +34,19 @@ describe("JT808", () =>
             );
           });
         });
+
+        it("Should return terminal phone number", () => {
+          const result = jt808.header().terminalPhoneNumber;
+          expect(result).to.equal(
+            "123456789012",
+            "Invalid terminal phone number."
+          );
+        });
+
+        it("Should return message sequence number", () => {
+          const result = jt808.header().messageSequenceNumber;
+          expect(result).to.equal(126, "Invalid message sequence number.");
+        });
       });
     })
   ));
