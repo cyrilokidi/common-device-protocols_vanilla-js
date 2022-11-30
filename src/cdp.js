@@ -4,8 +4,4 @@ module.exports = class CDP {
   constructor(str) {
     this.str = str;
   }
-
-  deserialize(str) {
-    return str;
-  }
 };
