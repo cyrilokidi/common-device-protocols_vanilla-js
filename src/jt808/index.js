@@ -33,6 +33,7 @@ module.exports = class JT808 extends CDP {
         dataEncyption: h.dataEncyption,
         wheatherToSubContract: h.wheatherToSubContract,
       },
+      terminalPhoneNumber: h.terminalPhoneNumber,
     };
   }
 };
