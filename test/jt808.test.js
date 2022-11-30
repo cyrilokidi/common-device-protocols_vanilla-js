@@ -8,6 +8,11 @@ describe("JT808", () =>
       const jt808 = new JT808(d);
 
       describe("Header", () => {
+        it("Should return message id", () => {
+          const result = jt808.header().messageId;
+          expect(result).to.equal(512, "Incorrect message id.");
+        });
+
         describe("Message body attributes", () => {
           it("Should return message body length", () => {
             const result =
