@@ -34,6 +34,7 @@ module.exports = class JT808 extends CDP {
         wheatherToSubContract: h.wheatherToSubContract,
       },
       terminalPhoneNumber: h.terminalPhoneNumber,
+      messageSequenceNumber: h.messageSequenceNumber,
     };
   }
 };

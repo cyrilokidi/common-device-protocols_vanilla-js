@@ -12,6 +12,7 @@ const {
   DATA_ENCRYPTION,
   WHETHER_TO_SUBCONTRACT,
   TERMINAL_PHONE_NUMBER,
+  MESSAGE_SEQUENCE_NUMBER,
 } = require("./jt808.constant");
 
 module.exports = class JT808Header {
@@ -68,6 +69,14 @@ module.exports = class JT808Header {
   get terminalPhoneNumber() {
     let result = this.property(TERMINAL_PHONE_NUMBER);
     result = arrToString(result);
+    return result;
+  }
+
+  get messageSequenceNumber() {
+    let result = this.property(MESSAGE_SEQUENCE_NUMBER);
+    result = arrToString(result);
+    result = removeWhiteSpace(result);
+    result = hexToDec(result);
     return result;
   }
 };

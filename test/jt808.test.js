@@ -42,6 +42,11 @@ describe("JT808", () =>
             "Invalid terminal phone number."
           );
         });
+
+        it("Should return message sequence number", () => {
+          const result = jt808.header().messageSequenceNumber;
+          expect(result).to.equal(126, "Invalid message sequence number.");
+        });
       });
     })
   ));
