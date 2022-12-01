@@ -50,5 +50,10 @@ describe("JT808", () =>
           expect(result).to.equal(126, "Invalid message sequence number.");
         });
       });
+
+      it("Should return message check code", () => {
+        const result = jt808.checkCode;
+        expect(result).to.equal(13, "Invalid check code.");
+      });
     })
   ));

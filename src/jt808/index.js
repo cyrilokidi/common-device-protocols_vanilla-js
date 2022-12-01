@@ -4,11 +4,11 @@ const { HEADER } = require("./jt808.constant");
 const JT808Header = require("./jt808.header");
 
 module.exports = class JT808 extends CDP {
-  byte;
+  b;
 
   constructor(byte) {
     super(byte);
-    this.byte = this.deserialize(byte);
+    this.b = this.deserialize(byte);
   }
 
   deserialize(byte) {
@@ -20,7 +20,7 @@ module.exports = class JT808 extends CDP {
   }
 
   property(name) {
-    return this.byte.slice(...name);
+    return this.b.slice(...name);
   }
 
   get header() {
@@ -36,5 +36,10 @@ module.exports = class JT808 extends CDP {
       terminalPhoneNumber: h.terminalPhoneNumber,
       messageSequenceNumber: h.messageSequenceNumber,
     };
+  }
+
+  get checkCode() {
+    const [prop] = this.property([this.b.length - 2, this.b.length - 1]);
+    return Number(prop);
   }
 };
