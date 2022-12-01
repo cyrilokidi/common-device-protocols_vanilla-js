@@ -52,5 +52,9 @@ describe("JT808", () =>
         const result = jt808.checkCode;
         expect(result).to.equal(13, "Invalid check code.");
       });
+
+      describe("Body", () => {
+        console.log("body: ", jt808.body);
+      });
     })
   ));

@@ -4,4 +4,8 @@ module.exports = class JT808Body {
   constructor(byte) {
     this.b = byte;
   }
+
+  get data() {
+    return this.b;
+  }
 };

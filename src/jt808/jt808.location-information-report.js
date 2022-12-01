@@ -7,4 +7,8 @@ module.exports = class JT808LocationInformationReport extends JT808Body {
     super(byte);
     this.b = byte;
   }
+
+  get data() {
+    return this.b;
+  }
 };
