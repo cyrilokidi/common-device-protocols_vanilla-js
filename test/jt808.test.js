@@ -8,9 +8,12 @@ describe("JT808", () =>
       const jt808 = new JT808(d);
 
       describe("Header", () => {
-        it("Should return message id", () => {
-          const result = jt808.header().messageId;
-          expect(result).to.equal(512, "Incorrect message id.");
+        it("Should return message type", () => {
+          const result = jt808.header().type;
+          expect(result).to.equal(
+            "LOCATION_INFORMATION_REPORT",
+            "Incorrect message id."
+          );
         });
 
         describe("Message body attributes", () => {

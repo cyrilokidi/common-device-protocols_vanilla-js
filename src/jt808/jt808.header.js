@@ -14,6 +14,7 @@ const {
   TERMINAL_PHONE_NUMBER,
   MESSAGE_SEQUENCE_NUMBER,
 } = require("./jt808.constant");
+const { messageType } = require("./jt808.lib");
 
 module.exports = class JT808Header {
   byte;
@@ -32,6 +33,10 @@ module.exports = class JT808Header {
     result = removeWhiteSpace(result);
     result = hexToDec(result);
     return result;
+  }
+
+  get type() {
+    return messageType(this.messageId);
   }
 
   get messageBodyLength() {
