@@ -27,7 +27,7 @@ module.exports = class JT808 extends CDP {
     const prop = this.property(HEADER);
     const h = new JT808Header(prop);
     return {
-      type: h.type,
+      messageId: h.messageId,
       messageBodyAttributes: {
         messageBodyLength: h.messageBodyLength,
         dataEncyption: h.dataEncyption,
