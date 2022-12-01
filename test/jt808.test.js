@@ -12,7 +12,7 @@ describe("JT808", () =>
           const result = jt808.header.type;
           expect(result).to.equal(
             "LOCATION_INFORMATION_REPORT",
-            "Incorrect message id."
+            "Incorrect message type."
           );
         });
 

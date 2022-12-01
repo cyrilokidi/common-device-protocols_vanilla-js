@@ -17,14 +17,14 @@ const {
 const { messageType } = require("./jt808.lib");
 
 module.exports = class JT808Header {
-  byte;
+  b;
 
   constructor(byte) {
-    this.byte = byte;
+    this.b = byte;
   }
 
   property(name) {
-    return this.byte.slice(...name);
+    return this.b.slice(...name);
   }
 
   get messageId() {
