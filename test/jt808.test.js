@@ -9,7 +9,7 @@ describe("JT808", () =>
 
       describe("Header", () => {
         it("Should return message type", () => {
-          const result = jt808.header().type;
+          const result = jt808.header.type;
           expect(result).to.equal(
             "LOCATION_INFORMATION_REPORT",
             "Incorrect message id."
@@ -18,19 +18,18 @@ describe("JT808", () =>
 
         describe("Message body attributes", () => {
           it("Should return message body length", () => {
-            const result =
-              jt808.header().messageBodyAttributes.messageBodyLength;
+            const result = jt808.header.messageBodyAttributes.messageBodyLength;
             expect(result).to.equal(38, "Incorrect message body length.");
           });
 
           it("Should return data encryption", () => {
-            const result = jt808.header().messageBodyAttributes.dataEncyption;
+            const result = jt808.header.messageBodyAttributes.dataEncyption;
             expect(result).to.equal("None", "Invalid data encryption.");
           });
 
           it("Should return sub-package status", () => {
             const result =
-              jt808.header().messageBodyAttributes.wheatherToSubContract;
+              jt808.header.messageBodyAttributes.wheatherToSubContract;
             expect(result).to.equal(
               "Not Long Message",
               "Invalid sub-package status."
@@ -39,7 +38,7 @@ describe("JT808", () =>
         });
 
         it("Should return terminal phone number", () => {
-          const result = jt808.header().terminalPhoneNumber;
+          const result = jt808.header.terminalPhoneNumber;
           expect(result).to.equal(
             "123456789012",
             "Invalid terminal phone number."
@@ -47,7 +46,7 @@ describe("JT808", () =>
         });
 
         it("Should return message sequence number", () => {
-          const result = jt808.header().messageSequenceNumber;
+          const result = jt808.header.messageSequenceNumber;
           expect(result).to.equal(126, "Invalid message sequence number.");
         });
       });

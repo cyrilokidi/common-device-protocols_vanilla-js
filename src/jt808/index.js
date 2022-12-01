@@ -23,7 +23,7 @@ module.exports = class JT808 extends CDP {
     return this.byte.slice(...name);
   }
 
-  header() {
+  get header() {
     const prop = this.property(HEADER);
     const h = new JT808Header(prop);
     return {
